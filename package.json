@@ -1,0 +1,20 @@
+{
+  "name": "opencart_framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.62.0",
+    "@types/node": "^26.1.2",
+    "allure-commandline": "^2.43.0",
+    "allure-playwright": "^3.10.2"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.5.0",
+    "csv-parse": "^7.0.1",
+    "xlsx": "^0.18.5"
+  }
+}
