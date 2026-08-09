@@ -8,6 +8,7 @@ export class HomePage {
     private readonly LoginMyaccount: Locator;
     private readonly SearchBar: Locator;
     private readonly SearchButton: Locator;
+    private readonly SearchButton2: Locator;
 
     //constructor
     constructor(page: Page) {
@@ -16,7 +17,9 @@ export class HomePage {
         this.RegisterMyaccount = page.locator('.list-inline ul li:has-text("Register")');
         this.LoginMyaccount = page.locator('.list-inline ul li:has-text("Login")');
         this.SearchBar = page.locator('input.form-control');
-        this.SearchButton = page.locator('.input-group-btn')
+        this.SearchButton = page.locator('.input-group-btn');
+        this.SearchButton2 = page.locator("input#button-search");
+
 
     }
 
@@ -68,6 +71,7 @@ export class HomePage {
     async Search_Button() {
         try {
             await this.SearchButton.click();
+
         }
         catch (error) {
             console.log(`Error for search button is ${error}`);

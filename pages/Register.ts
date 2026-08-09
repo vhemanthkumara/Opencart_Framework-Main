@@ -39,8 +39,9 @@ export class RegisterPage {
         await this.lastName.fill(lastName);
     }
 
-    async enterEmail(email: string): Promise<void> {
+    async enterEmail(email: string): Promise<string> {
         await this.email.fill(email);
+        return email;
     }
 
     async enterPhoneNumber(phoneNumber: string): Promise<void> {
