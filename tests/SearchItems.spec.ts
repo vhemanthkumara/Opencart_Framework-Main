@@ -17,3 +17,4 @@ test("Search any item", async ({ page }) => {
     await searchingnyItem.SearchProduct("MacBook Air");
     await searchingnyItem.ProductPrize();
 })
+
