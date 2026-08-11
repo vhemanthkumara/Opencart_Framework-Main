@@ -6,7 +6,7 @@ import { MyAccountPage } from "../pages/MyAccountPage"
 import { RegisterPage } from "../pages/Register"
 import { LoginPage } from "../pages/login"
 import { SearchResultsPage } from "../pages/SearchResultsPage"
-import { AddToCart } from "../pages/addToCart";
+import { AddToCart } from "../pages/AddToCart";
 import { Logout } from "../pages/logout"
 
 let URL: TestConfig;
