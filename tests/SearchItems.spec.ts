@@ -12,7 +12,7 @@ test.afterEach(async ({ page }) => {
     await page.close();
 })
 
-test("Search any item", async ({ page }) => {
+test("Search any item @smoke", async ({ page }) => {
     const searchingnyItem = new SearchResultsPage(page);
     await searchingnyItem.SearchProduct("MacBook Air");
     await searchingnyItem.ProductPrize();

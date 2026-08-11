@@ -21,7 +21,7 @@ test.afterEach(async ({ page }) => {
     await page.close();
 })
 
-test('Add a product to cart', async () => {
+test('Add a product to cart @sanity', async () => {
 
     async function addtocart(Itemname: string) {
 

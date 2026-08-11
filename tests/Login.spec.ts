@@ -23,7 +23,7 @@ test.afterEach(async ({page})=>{
     await page.close();
 })
 
-test("login Flow", async ({page})=>{
+test("login Flow @smoke", async ({page})=>{
 
     //const config = new TestConfig();
     //await page.goto(config.appUrl);

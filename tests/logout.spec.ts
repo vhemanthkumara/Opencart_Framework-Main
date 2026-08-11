@@ -34,7 +34,7 @@ test.afterEach(async ({ page }) => {
 
 
 
-test("logout Flow", async () => {
+test("logout Flow @smoke", async () => {
 
     await homepage.ClickMyAccount();
     await logout.clickonlogout();

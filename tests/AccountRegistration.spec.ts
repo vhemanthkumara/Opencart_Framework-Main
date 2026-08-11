@@ -24,7 +24,7 @@ test.afterEach(async ({page})=>{
 
 })
 
-test("Account Registration", async ()=>{
+test("Account Registration @sanity", async ()=>{
 
     //const config=new TestConfig();
     //await page.goto(config.appUrl)  

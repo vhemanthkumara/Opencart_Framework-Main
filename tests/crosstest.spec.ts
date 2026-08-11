@@ -35,7 +35,7 @@ test("sample", async ({ page }) => {
     await page.waitForTimeout(3000);
 })
 
-test.only("search Item", async ({ page }) => {
+test.only("search Item @sanity", async ({ page }) => {
 
     await page.goto("https://tutorialsninja.com/demo/")
     let SearchBar = page.getByPlaceholder('Search');

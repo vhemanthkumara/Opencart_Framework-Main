@@ -40,7 +40,7 @@ test.afterEach(async ({ page }) => {
 })
 
 
-test("End to End Scenario", async ({ page }) => {
+test("End to End Scenario @sanity", async ({ page }) => {
 
     await page.goto(URL.appUrl);
 
