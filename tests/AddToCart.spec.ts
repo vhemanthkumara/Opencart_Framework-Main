@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { SearchResultsPage } from "../pages/SearchResultsPage";
-import { AddToCart } from "../pages/addToCart";
+import { AddToCart } from "../pages/AddToCart";
 import { TestConfig } from "../test.config";
 
 
