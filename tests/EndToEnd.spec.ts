@@ -15,7 +15,7 @@ let MyAccount: MyAccountPage;
 let Homepage: HomePage;
 let register: RegisterPage;
 let search: SearchResultsPage;
-let addtocart: AddToCart;
+let Addtocart: AddToCart;
 let logout: Logout;
 
 test.beforeEach(async ({ page }) => {
@@ -26,7 +26,7 @@ test.beforeEach(async ({ page }) => {
     Homepage = new HomePage(page);
     register = new RegisterPage(page);
     search = new SearchResultsPage(page);
-    addtocart = new AddToCart(page);
+    Addtocart = new AddToCart(page);
     logout = new Logout(page);
 
 })
@@ -74,15 +74,15 @@ test("End to End Scenario @sanity", async ({ page }) => {
     await search.SearchProduct("MacBook");
     await search.ProductPrize();
 
-    await addtocart.AddToCart();
+    await Addtocart.AddToCart();
 
-    const verify = await addtocart.VerifyTheMessage();
+    const verify = await Addtocart.VerifyTheMessage();
     expect(verify).toContain('Success: You have added MacBook to your shopping cart!');
 
-    await addtocart.GotoCart();
+    await Addtocart.GotoCart();
 
-    await addtocart.GotoCart();
-    const confirm = await addtocart.IsProductInCart();
+    await Addtocart.GotoCart();
+    const confirm = await Addtocart.IsProductInCart();
     expect(confirm).toContain('MacBook')
 
 })
