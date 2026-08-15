@@ -1,42 +1,62 @@
-import{test, Expect, Locator} from "@playwright/test"
-import { HomePage } from "../pages/HomePage"
-import { LoginPage } from "../pages/login"
-import { TestConfig } from "../test.config"
+import { test } from "@playwright/test";
+import { HomePage } from "../pages/HomePage";
+import { LoginPage } from "../pages/login";
+import { TestConfig } from "../test.config";
 
-let config:TestConfig;
-let homepage:HomePage;
-let loginpage:LoginPage;
+// Declare configuration and Page Object variables
+let config: TestConfig;
+let homepage: HomePage;
+let loginpage: LoginPage;
 
-test.beforeEach(async ({page})=>{
+
+// Runs before every test
+// Initializes the configuration and Page Objects
+// Then navigates to the application and opens the Login page
+test.beforeEach(async ({ page }) => {
+
+    // Create an instance of the test configuration
     config = new TestConfig();
+
+    // Navigate to the application URL
     await page.goto(config.appUrl);
+
+    // Initialize the Home Page Object
     homepage = new HomePage(page);
+
+    // Open the My Account menu
     await homepage.ClickMyAccount();
+
+    // Navigate to the Login page
     await homepage.login();
-    loginpage= new LoginPage(page);
 
-})
+    // Initialize the Login Page Object
+    loginpage = new LoginPage(page);
+});
 
-test.afterEach(async ({page})=>{
 
+// Runs after every test
+// Waits for a few seconds and closes the browser page
+test.afterEach(async ({ page }) => {
+
+    // Wait for 5 seconds after test execution
+    // This can be useful while debugging the test locally
     await page.waitForTimeout(5000);
+
+    // Close the current browser page
     await page.close();
-})
+});
 
-test("login Flow @smoke", async ({page})=>{
 
-    //const config = new TestConfig();
-    //await page.goto(config.appUrl);
+// Login Flow test
+// @smoke tag allows this test to be executed as part of the Smoke test suite
+test("Login Flow @smoke", async ({ page }) => {
 
-    /*const homepage = new HomePage(page);
-
-    await homepage.ClickMyAccount();
-    await homepage.login();
-    */
-   
-    //const loginpage= new LoginPage(page);
+    // Enter the email address from the test configuration
     await loginpage.enterEmail(config.email);
-    await loginpage.enterPWD(config.password);
-    await loginpage.clickLogin();
 
-})
+    // Enter the password from the test configuration
+    await loginpage.enterPWD(config.password);
+
+    // Click the Login button
+    await loginpage.clickLogin();
+});

@@ -1,34 +1,79 @@
-import { Locator, Page } from "@playwright/test"
+import { Locator, Page } from "@playwright/test";
 
 export class LoginPage {
+
+    // Stores the current Playwright page instance
     private readonly page: Page;
+
+    // Locator for the email address input field
     private readonly mailaddress: Locator;
+
+    // Locator for the password input field
     private readonly Password: Locator;
+
+    // Locator for the "Forgotten Password" link
     private readonly forgotpwd: Locator;
+
+    // Locator for the Login button
     private readonly Loginbutton: Locator;
 
-    constructor(page: Page) {
-        this.page = page;
-        this.mailaddress = page.locator("#input-email");
-        this.Password = page.locator("#input-password");
-        this.forgotpwd = page.locator("div[class='form-group'] a");
-        this.Loginbutton = page.locator("input[value='Login']");
 
+    // Constructor
+    // Receives the Playwright Page object and initializes all locators
+    constructor(page: Page) {
+
+        // Assign the Playwright page instance to the class variable
+        this.page = page;
+
+        // Locate the email address input field using its ID
+        this.mailaddress = page.locator("#input-email");
+
+        // Locate the password input field using its ID
+        this.Password = page.locator("#input-password");
+
+        // Locate the "Forgotten Password" link
+        this.forgotpwd = page.locator("div[class='form-group'] a");
+
+        // Locate the Login button using its value attribute
+        this.Loginbutton = page.locator("input[value='Login']");
     }
 
+
+    // Enters the provided email address into the email field
     async enterEmail(Email: string) {
+
+        // Fill the email input with the provided email
         await this.mailaddress.fill(Email);
     }
-    async enterPWD(password: string) {
-        await this.Password.fill(password);
-    }
-    async clickLogin() {
-        await this.Loginbutton.click();
-    }
-    async loginFlow(email: string, password: string) {
-        await this.mailaddress.fill(email);
-        await this.Password.fill(password);
-        await this.Loginbutton.click();
 
+
+    // Enters the provided password into the password field
+    async enterPWD(password: string) {
+
+        // Fill the password input with the provided password
+        await this.Password.fill(password);
+    }
+
+
+    // Clicks the Login button
+    async clickLogin() {
+
+        // Click the Login button to submit the login form
+        await this.Loginbutton.click();
+    }
+
+
+    // Performs the complete login flow
+    // Accepts email and password as parameters and performs login in one method
+    async loginFlow(email: string, password: string) {
+
+        // Enter the email address
+        await this.mailaddress.fill(email);
+
+        // Enter the password
+        await this.Password.fill(password);
+
+        // Click the Login button
+        await this.Loginbutton.click();
     }
 }
