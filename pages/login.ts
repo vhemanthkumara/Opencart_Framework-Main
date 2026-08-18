@@ -1,3 +1,4 @@
+import { th } from "@faker-js/faker";
 import { Locator, Page } from "@playwright/test";
 
 export class LoginPage {
@@ -16,6 +17,10 @@ export class LoginPage {
 
     // Locator for the Login button
     private readonly Loginbutton: Locator;
+
+    // Locator for the login fail warning message
+
+    private readonly LoginFail:Locator;
 
 
     // Constructor
@@ -36,6 +41,9 @@ export class LoginPage {
 
         // Locate the Login button using its value attribute
         this.Loginbutton = page.locator("input[value='Login']");
+
+       // Locate the Login button using its value attribute
+        this.LoginFail = page.locator('div.alert.alert-danger.alert-dismissible');
     }
 
 
@@ -60,6 +68,11 @@ export class LoginPage {
 
         // Click the Login button to submit the login form
         await this.Loginbutton.click();
+    }
+
+    async ifLoginFailMessage()
+    {
+        await this.LoginFail.textContent();
     }
 
 
