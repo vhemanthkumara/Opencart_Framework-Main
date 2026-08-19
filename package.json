@@ -14,18 +14,20 @@
     "allure:open": "allure open allure-report",
     "test:headed:all": "playwright test --headed",
     "report:html": "playwright show-report"
-},
+  },
   "keywords": [],
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@playwright/test": "^1.62.0",
-    "@types/node": "^26.1.2",
+    "@types/luxon": "^3.7.4",
+    "@types/node": "^26.2.0",
     "allure-commandline": "^2.43.0",
     "allure-playwright": "^3.10.2"
   },
   "dependencies": {
     "@faker-js/faker": "^10.5.0",
     "csv-parse": "^7.0.1",
+    "luxon": "^3.7.2",
     "xlsx": "^0.18.5"
   }
 }
