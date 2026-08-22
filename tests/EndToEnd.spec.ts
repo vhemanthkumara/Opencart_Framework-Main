@@ -1,13 +1,13 @@
 import { test, expect } from "@playwright/test";
-import { TestConfig } from "../test.config";
-import { RandomData } from "../utils/RandomData";
-import { HomePage } from "../pages/HomePage";
-import { MyAccountPage } from "../pages/MyAccountPage";
-import { RegisterPage } from "../pages/Register";
-import { LoginPage } from "../pages/login";
-import { SearchResultsPage } from "../pages/SearchResultsPage";
-import { AddToCart } from "../pages/AddToCart";
-import { Logout } from "../pages/logout";
+import { TestConfig } from "../test.config.js";
+import { RandomData } from "../utils/RandomData.js";
+import { HomePage } from "../pages/HomePage.js";
+import { MyAccountPage } from "../pages/MyAccountPage.js";
+import { RegisterPage } from "../pages/Register.js";
+import { LoginPage } from "../pages/login.js";
+import { SearchResultsPage } from "../pages/SearchResultsPage.js";
+import { AddToCart } from "../pages/AddToCart.js";
+import { Logout } from "../pages/logout.js";
 
 // Declare Page Object and configuration variables
 let URL: TestConfig;
@@ -142,7 +142,7 @@ test("End to End Scenario @sanity", async ({ page }) => {
     await logout.clickOnLogout();
 
 
-    // -------------------------------
+    // ------------------------------- 
     // STEP 3: LOGIN WITH CREATED USER
     // -------------------------------
 

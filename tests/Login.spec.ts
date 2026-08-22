@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
-import { HomePage } from "../pages/HomePage";
-import { LoginPage } from "../pages/login";
-import { TestConfig } from "../test.config";
+import { HomePage } from "../pages/HomePage.js";
+import { LoginPage } from "../pages/login.js";
+import { TestConfig } from "../test.config.js";
 
 // Declare configuration and Page Object variables
 let config: TestConfig;

@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
-import { HomePage } from "../pages/HomePage";
-import { RegisterPage } from "../pages/Register";
-import { RandomData } from "../utils/RandomData";
-import { TestConfig } from "../test.config";
+import { HomePage } from "../pages/HomePage.js";
+import { RegisterPage } from "../pages/Register.js"
+import { RandomData } from "../utils/RandomData.js"
+import { TestConfig } from "../test.config.js";
 
 // Declare Page Object and configuration variables
 let homepage: HomePage;

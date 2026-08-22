@@ -1,6 +1,6 @@
-import { test } from "@playwright/test";
-import { TestConfig } from "../test.config";
-import { SearchResultsPage } from "../pages/SearchResultsPage";
+import { test } from "@playwright/test"
+import { TestConfig } from "../test.config.js";
+import { SearchResultsPage } from "../pages/SearchResultsPage.js";
 
 
 // Runs before every test

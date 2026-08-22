@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
-import { HomePage } from "../pages/HomePage";
-import { Logout } from "../pages/logout";
-import { LoginPage } from "../pages/login";
-import { TestConfig } from "../test.config";
+import { HomePage } from "../pages/HomePage.js";
+import { Logout } from "../pages/logout.js";
+import { LoginPage } from "../pages/login.js";
+import { TestConfig } from "../test.config.js";
 
 // Declare configuration and Page Object variables
 let config: TestConfig;

@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
-import { SearchResultsPage } from "../pages/SearchResultsPage";
-import { AddToCart } from "../pages/AddToCart";
-import { TestConfig } from "../test.config";
+import { SearchResultsPage } from "../pages/SearchResultsPage.js";
+import { AddToCart } from "../pages/AddToCart.js";
+import { TestConfig } from "../test.config.js";
 
 // Declare Page Object and configuration variables
 let URL: TestConfig;
