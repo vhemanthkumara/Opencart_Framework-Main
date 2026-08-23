@@ -1,8 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
 timeout: 30 * 1000, //30000 ms(30 secs)
-testDir: './tests',
-fullyParallel: false,
+testDir: '.',
+testMatch: ['tests/**/*.spec.ts', 'API/**/*.spec.ts'],fullyParallel: false,
 //retries: process.env.CI ? 2 : 0,
 //retries:1,
 //workers: process.env.CI ? 1 : undefined,
