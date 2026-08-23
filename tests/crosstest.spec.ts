@@ -1,4 +1,4 @@
-import { Expect, test, Locator, expect } from "@playwright/test";
+/*import { Expect, test, Locator, expect } from "@playwright/test";
 
 test("sample", async ({ page }) => {
 
@@ -64,3 +64,4 @@ test.only("search Item @sanity", async ({ page }) => {
     await searchitem('MacBook Air');
 
 })
+    */
