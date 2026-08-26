@@ -1,3 +1,4 @@
+/*
 import { Locator, Page } from "@playwright/test";
 
 export class ForgetPWD
@@ -6,3 +7,4 @@ export class ForgetPWD
     private readonly Email:Locator;
     private readonly Continue:Locator;
 }
+*/

@@ -48,6 +48,7 @@ export class SearchResultsPage {
 
         // Select the product with the exact matching name
         await this.page.getByText(ItemName, { exact: true }).click();
+        //await this.page.locator('a').filter({ hasText: `${ItemName}` }).first().click();
     }
 
 

@@ -32,7 +32,7 @@ test("Search any item @smoke", async ({ page }) => {
     const searchingAnyItem = new SearchResultsPage(page);
 
     // Search for the specified product
-    await searchingAnyItem.SearchProduct("MacBook Air");
+    await searchingAnyItem.SearchProduct("iPhone");
 
     // Retrieve and display the price of the searched product
     await searchingAnyItem.ProductPrize();

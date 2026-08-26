@@ -14,6 +14,8 @@ export class Logout {
     // Locator for the Continue button displayed after logout
     private readonly continueButton: Locator;
 
+    private readonly Mylinkaccount:Locator;
+
 
     // Constructor
     // Receives the Playwright Page object and initializes all locators
@@ -34,12 +36,15 @@ export class Logout {
 
         // Locate the Continue link displayed after successful logout
         this.continueButton = page.locator('a:has-text("Continue")');
+
+        this.Mylinkaccount = page.locator('span:has-text("My Account")');
     }
 
 
     // Clicks the Logout button/link
     async clickOnLogout() {
 
+        await this.Mylinkaccount.click();
         // Click the Logout link
         await this.logoutButton.click();
     }
