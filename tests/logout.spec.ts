@@ -67,7 +67,7 @@ test.afterEach(async ({ page }) => {
 test("Logout Flow @smoke", async () => {
 
     // Open the My Account menu
-    await homepage.ClickMyAccount();
+    //await homepage.ClickMyAccount();
 
     // Click the Logout option
     await logout.clickOnLogout();

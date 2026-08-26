@@ -56,10 +56,10 @@ test.afterEach(async ({ page }) => {
 
     // Wait for 3 seconds after test execution
     // This can be useful for observing the final state during debugging
-    await page.waitForTimeout(3000);
+    //await page.waitForTimeout(3000);
 
     // Open the My Account menu
-    await Homepage.ClickMyAccount();
+   // await Homepage.ClickMyAccount();
 
     // Click the Logout option
     await logout.clickOnLogout();
@@ -131,12 +131,13 @@ test("End to End Scenario @sanity", async ({ page }) => {
     await register.clickContinue();
 
 
+
     // -------------------------------
     // STEP 2: LOGOUT AFTER REGISTRATION
     // -------------------------------
 
     // Open the My Account menu
-    await Homepage.ClickMyAccount();
+    //await Homepage.ClickMyAccount();
 
     // Logout from the newly created account
     await logout.clickOnLogout();
