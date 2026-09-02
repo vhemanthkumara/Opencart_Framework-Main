@@ -6,7 +6,7 @@ testMatch: ['tests/**/*.spec.ts', 'API/**/*.spec.ts'],fullyParallel: false,
 //retries: process.env.CI ? 2 : 0,
 //retries:1,
 //workers: process.env.CI ? 1 : undefined,
-workers: 1,
+workers: 2,
 reporter: [
 ['html', {outputFolder:'../Reportes/html-reports'}],
 ['allure-playwright', {outputFolder:'../Reportes/allure-reports'}],
