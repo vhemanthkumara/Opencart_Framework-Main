@@ -20,6 +20,12 @@ export class AddToCart {
     // Locator for the product name displayed inside the shopping cart
     private readonly ConfirmProductInCart: Locator;
 
+    // Locator for remove buttons displayed for products in the shopping cart
+    private readonly RemoveItemButtons: Locator;
+
+    // Locator for the empty-cart confirmation message
+    private readonly EmptyCartMessage: Locator;
+
 
     constructor(page: Page) {
 
@@ -41,6 +47,14 @@ export class AddToCart {
         // Identify the product name displayed in the cart table
         this.ConfirmProductInCart =
             page.locator(".table-responsive tbody td:nth-child(2)");
+
+        this.RemoveItemButtons = page.locator(
+            "button[title='Remove']:visible"
+        );
+        this.EmptyCartMessage = page.locator("#content").getByText(
+            "Your shopping cart is empty!",
+            { exact: true }
+        );
     }
 
 
@@ -71,5 +85,20 @@ export class AddToCart {
     // This can be used to verify that the expected product was added successfully
     async IsProductInCart() {
         return this.ConfirmProductInCart.innerText();
+    }
+
+
+    // Removes every product currently displayed in the shopping cart
+    async ClearCart() {
+        while (await this.RemoveItemButtons.count() > 0) {
+            await this.RemoveItemButtons.first().click();
+            await this.page.waitForTimeout(500);
+        }
+    }
+
+
+    // Verifies that the shopping cart displays its empty state
+    async IsCartEmpty() {
+        return this.EmptyCartMessage.isVisible();
     }
 }
